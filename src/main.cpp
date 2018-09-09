@@ -92,5 +92,5 @@ int main(int argc, char** argv)
     ofile.close();
 
     /*make libconv.so*/
-    system(("nvcc --cudart=shared -Xcompiler -fPIC -shared -o libaigpu.so " + string(argv[1])).c_str());
+    system(("nvcc -ccbin g++-5 --cudart=shared -Xcompiler -fPIC -shared -o libaigpu.so " + string(argv[1])).c_str());
 }
